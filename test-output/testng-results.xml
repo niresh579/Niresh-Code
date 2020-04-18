@@ -2,39 +2,38 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="842668" started-at="2020-04-04T08:01:02Z" finished-at="2020-04-04T08:15:05Z">
+  <suite name="Default suite" duration-ms="355319" started-at="2020-04-18T11:45:23Z" finished-at="2020-04-18T11:51:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="842668" started-at="2020-04-04T08:01:02Z" finished-at="2020-04-04T08:15:05Z">
-      <class name="test.WFH1.Registration">
-        <test-method status="PASS" signature="setUp1()[pri:0, instance:test.WFH1.Registration@5702b3b1]" name="setUp1" is-config="true" duration-ms="6453" started-at="2020-04-04T08:01:02Z" finished-at="2020-04-04T08:01:09Z">
+    <test name="Default test" duration-ms="355319" started-at="2020-04-18T11:45:23Z" finished-at="2020-04-18T11:51:18Z">
+      <class name="test.WFH1.RegistrationPI">
+        <test-method status="PASS" signature="setUp1()[pri:0, instance:test.WFH1.RegistrationPI@5702b3b1]" name="setUp1" is-config="true" duration-ms="7113" started-at="2020-04-18T11:45:23Z" finished-at="2020-04-18T11:45:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp1 -->
-        <test-method status="FAIL" signature="test()[pri:0, instance:test.WFH1.Registration@5702b3b1]" name="test" duration-ms="836139" started-at="2020-04-04T08:01:09Z" finished-at="2020-04-04T08:15:05Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="test()[pri:0, instance:test.WFH1.RegistrationPI@5702b3b1]" name="test" duration-ms="348188" started-at="2020-04-18T11:45:30Z" finished-at="2020-04-18T11:51:18Z">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'State')]//following::div[1])[3]"}
-  (Session info: chrome=80.0.3987.149)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[chrome not reachable
+  (Session info: chrome=80.0.3987.163)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-2EHDPTI', ip: '192.168.1.8', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+System info: host: 'DESKTOP-2EHDPTI', ip: '192.168.1.9', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\CBSTES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60333}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 8f2af9b235bf834c28e541571d10ffb2
-*** Element info: {Using=xpath, value=(//div[contains(text(),'State')]//following::div[1])[3]}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\CBSTES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:51562}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: d5223b61c8c0bbd98e4a1da7698f2378
+*** Element info: {Using=xpath, value=//*[@id='RegPanel']/div[2]/a/span}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'State')]//following::div[1])[3]"}
-  (Session info: chrome=80.0.3987.149)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=80.0.3987.163)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-2EHDPTI', ip: '192.168.1.8', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+System info: host: 'DESKTOP-2EHDPTI', ip: '192.168.1.9', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\CBSTES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60333}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 8f2af9b235bf834c28e541571d10ffb2
-*** Element info: {Using=xpath, value=(//div[contains(text(),'State')]//following::div[1])[3]}
-at sun.reflect.GeneratedConstructorAccessor61.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\CBSTES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:51562}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: d5223b61c8c0bbd98e4a1da7698f2378
+*** Element info: {Using=xpath, value=//*[@id='RegPanel']/div[2]/a/span}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
 at java.lang.reflect.Constructor.newInstance(Unknown Source)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
@@ -47,7 +46,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at test.WFH1.Registration.test(Registration.java:1317)
+at test.WFH1.RegistrationPI.test(RegistrationPI.java:679)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -75,11 +74,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-      </class> <!-- test.WFH1.Registration -->
+      </class> <!-- test.WFH1.RegistrationPI -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

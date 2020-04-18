@@ -31,7 +31,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import Base.BaseTest;
 
 
-public class Registration extends BaseTest{
+public class RegistrationPI extends BaseTest{
 	public static WebDriver driver;
 	String driverExecutablePath = "E:\\Protractor\\WFH1\\driver\\chromedriver.exe"; 
 
@@ -77,7 +77,7 @@ public class Registration extends BaseTest{
 	public void test() throws Throwable {
 		RegistrationPOM rp=new RegistrationPOM(driver);
 		Thread.sleep(4000);
-		driver.get("https://mstage.communitymatrimony.com/");
+		driver.get("https://m.communitymatrimony.com/");
 		Thread.sleep(4000);	
 		//driver.manage().window().maximize();
 		
@@ -395,9 +395,18 @@ public class Registration extends BaseTest{
 //			String m=mothertongue.getText();
 //			System.out.println(m);	
 		
+			Thread.sleep(8000);
+		   	JavascriptExecutor js411 = (JavascriptExecutor)driver;
+		   	  WebElement edi234= driver.findElement(By.xpath("//*[@id='MOTHERTONGUE']"));
+			  	  js411.executeScript("arguments[0].scrollIntoView(true);",edi234);
 			Thread.sleep(6000);
-		   // BaseTest.click(rp.getMothertongue());
-			//driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
+			try {
+				 BaseTest.click(rp.getMothertongue());
+					driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		  
 			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 4)+"')]")));
 			
 			Thread.sleep(6000);
@@ -592,8 +601,7 @@ public class Registration extends BaseTest{
 			Thread.sleep(4000);
 			driver.findElement(By.xpath("//*[@id='list_view_detail']/li[3]")).click();
 			
-			Thread.sleep(6000);
-			driver.findElement(By.xpath("//*[@id='RegPanel']/div[2]/a/span")).click();
+			
 			
 			
 //			
@@ -602,14 +610,13 @@ public class Registration extends BaseTest{
 //			String m11=childlivingwith.getText();
 //			System.out.println(m11);	
 			
-			Thread.sleep(4000);
-			BaseTest.click(rp.getChildlivingwith());
-			
+//			Thread.sleep(4000);
+//			BaseTest.click(rp.getChildlivingwith());
+//			
 			Thread.sleep(4000);
 			driver.findElement(By.xpath("//*[@id='list_view_detail']/li[1]")).click();
 			
-			Thread.sleep(6000);
-			driver.findElement(By.xpath("//*[@id='RegPanel']/div[2]/a/span")).click();
+			
 			
 			
 //		
@@ -632,8 +639,8 @@ public class Registration extends BaseTest{
 //			Thread.sleep(6000);
 //			driver.findElement(By.xpath("//*[@id='list_view_detail']/li[1]")).click();
 			
-			Thread.sleep(6000);
-			driver.findElement(By.xpath("//*[@id='RegPanel']/div[2]/a/span")).click();
+//			Thread.sleep(6000);
+//			driver.findElement(By.xpath("//*[@id='RegPanel']/div[2]/a/span")).click();
 			
 //			        Thread.sleep(4000);
 //				  	BaseTest.click(rp.getContinuebutton2());	
@@ -1186,7 +1193,7 @@ public class Registration extends BaseTest{
 			Thread.sleep(4000);
 			BaseTest.click(rp.getContinuebutton3());
 			
-			Thread.sleep(13000);
+			Thread.sleep(15000);
 			
 			
 			  try {
@@ -1216,1119 +1223,122 @@ public class Registration extends BaseTest{
                   //System.out.println("no element 3");
           }
 
+         
+		//pi informations
+          
           Thread.sleep(4000);
-          BaseTest.click(rp.getEditpp());
-			
-			
-			System.out.println("PP INFORMATIONS :");
-			
-			
-			
-			
-			 ///pp check/////
-            Thread.sleep(4000);
-            WebElement marital2=driver.findElement(By.xpath("//*[@id='editpp-pwa']/div[3]/div[2]/ul/li[1]/div[2]"));
-            String partner=marital2.getText();
-            System.out.println("marital status :"+partner);
+          WebElement marital2=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[3]/div[2]/ul/li[1]/div[2]"));
+          String partner=marital2.getText();
+          System.out.println("marital status :"+partner);
 
-            try {
-                    Thread.sleep(4000);
-                    WebElement havechild=driver.findElement(By.xpath("//*[@id='editpp-pwa']/div[3]/div[2]/ul/li[2]/div[2]"));
-                    String child=havechild.getText();
-                    System.out.println("have children :"+child);
+          try {
+                  Thread.sleep(4000);
+                  WebElement havechild=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[3]/div[2]/ul/li[2]/div[2]"));
+                  String child=havechild.getText();
+                  System.out.println("have children :"+child);
 
-          } catch (Exception e2) {
-                  System.out.println("no child");
-          }
+        } catch (Exception e2) {
+                System.out.println("no child");
+        }
 
-            Thread.sleep(4000);
-            WebElement age=driver.findElement(By.xpath("//*[@id='editpp-pwa']/div[3]/div[2]/ul/li[3]/div[2]"));
-            String ppa=age.getText();
-            System.out.println("Age in pp:"+ppa);
-            String[] split=ppa.split(" - 35 Yrs");
+          Thread.sleep(4000);
+          WebElement age=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[3]/div[2]/ul/li[3]/div[2]"));
+          String ppa=age.getText();
+          System.out.println("Age in pi:"+ppa);
+          String[] split=ppa.split(" - 35 Yrs");
 
-            String[] split1=ppa.split(" - ");
+          String[] split1=ppa.split(" - ");
 
-            String[] split2=split1[1].split(" Yrs");
+          String[] split2=split1[1].split(" Yrs");
 
-            String ppage=(split[0]+"-"+split2[0]);
-            System.out.println("final pp age:"+ppage);
+          String ppage=(split[0]+"-"+split2[0]);
+          System.out.println("final pi age:"+ppage);
 
-            Thread.sleep(4000);
-            WebElement height1=driver.findElement(By.xpath("//*[@id='editpp-pwa']/div[3]/div[2]/ul/li[4]/div[2]"));
-            String ppheight=height1.getText();
-            System.out.println("Height in pp :"+ppheight);
+          Thread.sleep(4000);
+          WebElement height1=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[3]/div[2]/ul/li[4]/div[2]"));
+          String ppheight=height1.getText();
+          System.out.println("Height in pi :"+ppheight);
 
-            Thread.sleep(4000);
-            WebElement mother=driver.findElement(By.xpath("//*[@id='editpp-pwa']/div[3]/div[2]/ul/li[5]/div[2]/span"));
-            String tongue=mother.getText();
-            System.out.println("mother tongue in pp :"+tongue);
+          Thread.sleep(4000);
+          WebElement mother=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[3]/div[2]/ul/li[5]/div[2]/span"));
+          String tongue=mother.getText();
+          System.out.println("mother tongue in pi :"+tongue);
 
 
 
-                    Thread.sleep(4000);
-                    WebElement caste5=driver.findElement(By.xpath("//*[@id='editpp-pwa']/div[4]/div[2]/ul/li[1]/div[2]"));
-                    String subcaste1=caste5.getText();
-                    System.out.println("subcaste in pp :"+subcaste1);
+                  Thread.sleep(4000);
+                  WebElement caste5=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[4]/div[2]/ul/li[1]/div[2]"));
+                  String subcaste1=caste5.getText();
+                  System.out.println("subcaste in pi :"+subcaste1);
 
 
 
 
 
-            Thread.sleep(4000);
-            WebElement dosham=driver.findElement(By.xpath("//*[@id='editpp-pwa']/div[4]/div[2]/ul/li[2]/div[2]"));
-            String doshampp=dosham.getText();
-            System.out.println("Gotharam in pp :"+doshampp);
+          Thread.sleep(4000);
+          WebElement dosham=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[4]/div[2]/ul/li[2]/div[2]"));
+          String doshampp=dosham.getText();
+          System.out.println("Gotharam in pi :"+doshampp);
 
-            Thread.sleep(4000);
-            WebElement star5=driver.findElement(By.xpath("//*[@id='editpp-pwa']/div[4]/div[2]/ul/li[3]/div[2]"));
-            String starpp=star5.getText();
-            System.out.println("Dosham in pp :"+starpp);
+          Thread.sleep(4000);
+          WebElement star5=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[4]/div[2]/ul/li[3]/div[2]"));
+          String starpp=star5.getText();
+          System.out.println("Dosham in pi :"+starpp);
 
 
-            Thread.sleep(4000);
-            WebElement edu=driver.findElement(By.xpath("//*[@id='editpp-pwa']/div[5]/div[2]/ul/li[1]/div[2]"));
-            String edupp=edu.getText();
-            System.out.println("education in pp :"+edupp);
+          Thread.sleep(4000);
+          WebElement edu=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[5]/div[2]/ul/li[1]/div[2]"));
+          String edupp=edu.getText();
+          System.out.println("education in pi :"+edupp);
 
 
-            Thread.sleep(4000);
-            WebElement occ=driver.findElement(By.xpath("//*[@id='editpp-pwa']/div[5]/div[2]/ul/li[2]/div[2]"));
-            String occpp=occ.getText();
-            System.out.println("occupation in pp :"+occpp);
+          Thread.sleep(4000);
+          WebElement occ=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[5]/div[2]/ul/li[2]/div[2]"));
+          String occpp=occ.getText();
+          System.out.println("occupation in pi :"+occpp);
 
 
-            Thread.sleep(4000);
-            WebElement income=driver.findElement(By.xpath("//*[@id='editpp-pwa']/div[5]/div[2]/ul/li[3]/div[2]"));
-            String incomepp=income.getText();
-            System.out.println("income in pp :"+incomepp);
+          Thread.sleep(4000);
+          WebElement income=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[5]/div[2]/ul/li[3]/div[2]"));
+          String incomepp=income.getText();
+          System.out.println("income in pi :"+incomepp);
 
 
-            Thread.sleep(4000);
-            WebElement country=driver.findElement(By.xpath("(//div[contains(text(),'Country')]//following::div[1])[2]"));
-            String countryp=country.getText();
-//            System.out.println("country in pp :"+countryp);
-//            String[] coun1=countryp.split(",");
-//
-//            String countrypp=(coun1[0]+coun1[1]+coun1[2]+coun1[3]);
-            System.out.println("finalcountry in pp:"+countryp);
+          Thread.sleep(4000);
+          WebElement country=driver.findElement(By.xpath("(//div[contains(text(),'Country')]//following::div[1])[2]"));
+          String countryp=country.getText();
+//          System.out.println("country in pp :"+countryp);
+//          String[] coun1=countryp.split(",");
+  //
+//          String countrypp=(coun1[0]+coun1[1]+coun1[2]+coun1[3]);
+          System.out.println("finalcountry in pi:"+countryp);
 
 
 
-            Thread.sleep(4000);
-            WebElement state1=driver.findElement(By.xpath("(//div[contains(text(),'State')]//following::div[1])[3]"));
-            String statepp=state1.getText();
-            System.out.println("state in pp :"+statepp);
+//          Thread.sleep(4000);
+//          WebElement state1=driver.findElement(By.xpath("(//div[contains(text(),'State')]//following::div[1])[3]"));
+//          String statepp=state1.getText();
+//          System.out.println("state in pp :"+statepp);
+  //
+  //
+  //
+//          Thread.sleep(4000);
+//          WebElement city1=driver.findElement(By.xpath("(//div[contains(text(),'City')]//following::div[1])"));
+//          String cityp=city1.getText();
+//          System.out.println("city in pp :"+cityp);
+//          String[] coun2=cityp.split(",");
+  //
+//          String citypp=(coun2[0]+coun2[1]);
+//          System.out.println("final city in pp:"+citypp);
 
 
 
-            Thread.sleep(4000);
-            WebElement city1=driver.findElement(By.xpath("(//div[contains(text(),'City')]//following::div[1])"));
-            String cityp=city1.getText();
-            System.out.println("city in pp :"+cityp);
-            String[] coun2=cityp.split(",");
-
-            String citypp=(coun2[0]+coun2[1]);
-            System.out.println("final city in pp:"+citypp);
-
-
-
-            Thread.sleep(4000);
-            WebElement citizenship1=driver.findElement(By.xpath("(//div[contains(text(),'Citizenship')]//following::div[1])[2]"));
-            String citizenship1pp=citizenship1.getText();
-            System.out.println("citizenship in pp :"+citizenship1pp);
-
-
-            //back//
-            Thread.sleep(4000);
-            driver.findElement(By.xpath("//*[@id='historyBack']")).click();
-
-            System.out.println("Search Values :");
-
-            ///search///
-            Thread.sleep(4000);
-            driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-dashboard/ion-header/header/ion-navbar/div[2]/ion-grid/ion-row/ion-col[4]")).click();
-
-
-
-            Thread.sleep(4000);
-            WebElement marital1=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[1]/ion-list/ion-item[3]/div[1]/div/ion-label/div[2]"));
-            String partner1=marital1.getText();
-            System.out.println("marital status in search :"+partner1);
-
-            Thread.sleep(4000);
-            WebElement age1=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[1]/ion-list/ion-item[1]/div[1]/div/ion-label/div[2]"));
-            String ppae1=age1.getText();
-            System.out.println("Age in search:"+ppae1);
-
-            String[] split4=ppae1.split(" - 35 Yrs");
-            String[] split5=split4[0].split(" yrs");
-
-            String[] split6=ppae1.split("21 yrs - ");
-
-            String[] split7=split6[1].split(" yrs");
-
-            String ppage1=(split5[0]+"-"+split7[0]);
-            System.out.println("final search age:"+ppage1);
-
-            Thread.sleep(4000);
-            WebElement height11=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[1]/ion-list/ion-item[2]/div[1]/div/ion-label/div[2]"));
-            String ppheight1=height11.getText();
-            System.out.println("Height in search :"+ppheight1);
-
-            Thread.sleep(4000);
-            WebElement mother1=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[2]/ion-list/ion-item[2]/div[1]/div/ion-label/div[2]"));
-            String tongue1=mother1.getText();
-            System.out.println("mother tongue in search :"+tongue1);
-
-
-
-                    Thread.sleep(4000);
-                    WebElement caste1=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[2]/ion-list/ion-item[1]/div[1]/div/ion-label/div[2]"));
-                    String subcaste11=caste1.getText();
-                    System.out.println("subcaste in search :"+subcaste11);
-
-
-
-
-
-            Thread.sleep(4000);
-            WebElement dosham1=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[2]/ion-list/ion-item[4]/div[1]/div/ion-label/div[2]"));
-            String doshampp1=dosham1.getText();
-            System.out.println("dosham in search :"+doshampp1);
-
-            Thread.sleep(4000);
-            WebElement star8=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[2]/ion-list/ion-item[3]/div[1]/div/ion-label/div[2]"));
-            String starpp1=star8.getText();
-            System.out.println("starin search :"+starpp1);
-
-
-            Thread.sleep(4000);
-            WebElement edu1=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[2]/ion-list/ion-item[8]/div[1]/div/ion-label/div[2]"));
-            String edupp1=edu1.getText();
-            System.out.println("education in search :"+edupp1);
-
-
-            Thread.sleep(4000);
-            WebElement occ1=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[2]/ion-list/ion-item[9]/div[1]/div/ion-label/div[2]"));
-            String occpp1=occ1.getText();
-            System.out.println("occupation in search :"+occpp1);
-
-
-            Thread.sleep(4000);
-            WebElement income1=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[2]/ion-list/ion-item[10]/div[1]/div/ion-label/div[2]"));
-            String incomepp1=income1.getText();
-            System.out.println("income in search :"+incomepp1);
-
-
-            Thread.sleep(4000);
-            WebElement country11=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[2]/ion-list/ion-item[5]/div[1]/div/ion-label/div[2]"));
-            String countr1=country11.getText();
-            System.out.println("country in search :"+countr1);
-            String[] coun=countr1.split(" ,");
-
-            String countrypp1=(coun[0]+coun[1]+coun[2]+coun[3]);
-            System.out.println("finalcountry:"+countrypp1);
-
-
-            Thread.sleep(4000);
-            WebElement state11=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[2]/ion-list/ion-item[6]/div[1]/div/ion-label/div[2]"));
-            String statepp1=state11.getText();
-            System.out.println("state in search :"+statepp1);
-
-
-
-            Thread.sleep(4000);
-            WebElement city11=driver.findElement(By.xpath("/html/body/ion-app/ng-component/page-search/ion-content/div[2]/ion-grid[2]/ion-row/ion-col/form/div[2]/ion-list/ion-item[7]/div[1]/div/ion-label/div[2]"));
-            String cityp1=city11.getText();
-            System.out.println("city in search :"+cityp1);
-            String[] coun4=cityp.split(",");
-
-            String citypp1=(coun4[0]+coun4[1]);
-            System.out.println("final city in search:"+citypp1);
-
-			
-			
-			
-			
-			
-			
-			
-			
-//			//bodytype
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select body type of the bride')]")).getText();
-//				assertEquals("Select body type of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select body type of the groom')]")).getText();
-//				assertEquals("Select body type of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//weight
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select weight of the bride')]")).getText();
-//				assertEquals("Select weight of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select weight of the groom')]")).getText();
-//				assertEquals("Select weight of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//complexion
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select complexion of the bride')]")).getText();
-//				assertEquals("Select complexion of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select complexion of the groom')]")).getText();
-//				assertEquals("Select complexion of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//college/institution
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Enter college / institution the bride attended')]")).getText();
-//				assertEquals("Enter college / institution the bride attended",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Enter college / institution the groom attended')]")).getText();
-//				assertEquals("Enter college / institution the groom attended",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//star
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select star of the bride')]")).getText();
-//				assertEquals("Select star of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select star of the groom')]")).getText();
-//				assertEquals("Select star of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//raasi
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select raasi of the bride')]")).getText();
-//				assertEquals("Select raasi of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select raasi of the groom')]")).getText();
-//				assertEquals("Select raasi of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//gothram
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Enter gothram of the bride')]")).getText();
-//				assertEquals("Enter gothram of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Enter gothram of the groom')]")).getText();
-//				assertEquals("Enter gothram of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//dosham
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select dosham of the bride')]")).getText();
-//				assertEquals("Select dosham of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select dosham of the groom')]")).getText();
-//				assertEquals("Select dosham of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//time of  birth
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select bride's time of birth')]")).getText();
-//				assertEquals("Select bride's time of birth",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select groom's time of birth')]")).getText();
-//				assertEquals("Select groom's time of birth",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//country of birth
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select bride's country of birth')]")).getText();
-//				assertEquals("Select bride's country of birth",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select groom's country of birth')]")).getText();
-//				assertEquals("Select groom's country of birth",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//state of birth
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select bride's state of birth')]")).getText();
-//				assertEquals("Select bride's state of birth",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select groom's state of birth')]")).getText();
-//				assertEquals("Select groom's state of birth",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//city of birth
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select bride's city of birth')]")).getText();
-//				assertEquals("Select bride's city of birth",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select groom's city of birth')]")).getText();
-//				assertEquals("Select groom's city of birth",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//chart style
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select chart style preference')]")).getText();
-//				assertEquals("Select chart style preference",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='BODYTYPE']")).click();
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 23)+"')]")));
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 24)+"')]")));
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 25)+"')]")));
-////			
-////			Thread.sleep(4000);
-////			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-////			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("StageRegist", 1, 26)+"')]")));
-////			
-//			
-//			
-//			
-//			//college///
-//			Thread.sleep(4000);
-//			WebElement coll=driver.findElement(By.xpath("//*[@id='COLLEGEINSTITUTION']"));
-//			coll.sendKeys("anna university");
-//		
-//		
-//			Thread.sleep(4000);
-//			BaseTest.click(rp.getEatinghabit());
-//			
-//			Thread.sleep(4000);
-//			BaseTest.click(rp.getDrinkinghabit());
-//			
-//			Thread.sleep(4000);
-//			BaseTest.click(rp.getSmokinghabit());
-//			
-//			
-//			
-//			Thread.sleep(6000);
-//			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 30)+"')]")));
-//	
-//		
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 31)+"')]")));
-//	
-////			Thread.sleep(4000);
-////			BaseTest.click(rp.getGothra());
-////			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-////			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("StageRegist", 1, 29)+"')]")));
-////		
-//			
-//			Thread.sleep(4000);
-//			WebElement gothra=driver.findElement(By.xpath("//*[@id='GOTHRA_TXT']"));
-//			gothra.sendKeys("siva");
-//			
-//			
-//			Thread.sleep(4000);
-//			BaseTest.click(rp.getDosham());
-//		
-//			Thread.sleep(4000);
-//            driver.findElement(By.xpath("//*[@id='Sarpa Dosh']")).click();
-//			
-//
-//			Thread.sleep(4000);
-//            driver.findElement(By.xpath("//*[@id='RegPanel']/div[2]/a/span/span[2]")).click();
-//			
-//            //horscope//
-//            Thread.sleep(4000);
-//            driver.findElement(By.xpath("//*[@id='dw_set']")).click();
-//            
-//			Thread.sleep(6000);
-//			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 35)+"')]")));
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 36)+"')]")));
-//			
-//			//chart style
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='chartstyle']")).click();
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 37)+"')]")));
-//			
-////			Thread.sleep(4000);
-////			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-////			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 38)+"')]")));
-//			
-//			Thread.sleep(4000);
-//			BaseTest.click(rp.getContinuebutton3());
-//			
-//
-//			//page 5
-//			//hobbies
-//			
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the hobbies of the bride')]")).getText();
-//				assertEquals("Select the hobbies of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the hobbies of the groom')]")).getText();
-//				assertEquals("Select the hobbies of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//						
-//			}
-//			//interests
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the interests of the bride')]")).getText();
-//				assertEquals("Select the interests of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the interests of the groom')]")).getText();
-//				assertEquals("Select the interests of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//preferred movies
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the preferred movies genre of the bride')]")).getText();
-//				assertEquals("Select the preferred movies genre of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the preferred movies genre of the groom')]")).getText();
-//				assertEquals("Select the preferred movies genre of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//sport fitness activity
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the fitness activity of the bride')]")).getText();
-//				assertEquals("Select the fitness activity of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the fitness activity of the groom')]")).getText();
-//				assertEquals("Select the fitness activity of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//favourite cuisine
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the favourite cuisine of the bride')]")).getText();
-//				assertEquals("Select the favourite cuisine of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the favourite cuisine of the groom')]")).getText();
-//				assertEquals("Select the favourite cuisine of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//preferred dress style
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the preferred dress style of the bride')]")).getText();
-//				assertEquals("Select the preferred dress style of the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the preferred dress style of the groom')]")).getText();
-//				assertEquals("Select the preferred dress style of the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			//spoken languages
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the languages spoken by the bride')]")).getText();
-//				assertEquals("Select the languages spoken by the bride",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			try {
-//				String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the languages spoken by the groom')]")).getText();
-//				assertEquals("Select the languages spoken by the groom",casdiv, "Passed");
-//				
-//			} catch (Exception e) {
-//				
-//			}
-//			
-//			
-//			
-//			Thread.sleep(4000);
-//			BaseTest.click(rp.getHobbies());
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='Cooking']")).click();
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanel']/div[2]/a/span")).click();
-//			
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='Computer games']")).click();
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanel']/div[2]/a/span")).click();
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='Comedy']")).click();
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanel']/div[2]/a/span")).click();
-//			
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='Basketball']")).click();
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanel']/div[2]/a/span")).click();
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='Arabic']")).click();
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanel']/div[2]/a/span")).click();
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='Casual wear']")).click();
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanel']/div[2]/a/span")).click();
-//			
-//			
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='English']")).click();
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//*[@id='RegPanel']/div[2]/a/span")).click();
-//			
-//
-//		Thread.sleep(4000);
-//		BaseTest.click(rp.getContinuebutton());
-//		
-//
-//		//page6--->family informations
-//		// father status
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select occupation of the bride’s father')]")).getText();
-//			assertEquals("Select occupation of the bride’s father",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select occupation of the groom’s father')]")).getText();
-//			assertEquals("Select occupation of the groom’s father",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		//mother status
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the mother’s status of bride')]")).getText();
-//			assertEquals("Select the mother’s status of bride",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select the mother’s status of groom')]")).getText();
-//			assertEquals("Select the mother’s status of groom",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		//no of brothers
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select no. of brothers the bride has')]")).getText();
-//			assertEquals("Select no. of brothers the bride has",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select no. of brothers the groom has')]")).getText();
-//			assertEquals("Select no. of brothers the groom has",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//       //no of brother married
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select no. of brothers married')]")).getText();
-//			assertEquals("Select no. of brothers married",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		//No of sister
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select no. of sisters the bride has')]")).getText();
-//			assertEquals("Select no. of sisters the bride has",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select no. of sisters the groom has')]")).getText();
-//			assertEquals("Select no. of sisters the groom has",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		//no of sister married 
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Select no. of sisters married')]")).getText();
-//			assertEquals("Select no. of sisters married",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		//parents contact detail
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Enter contact details of the bride’s parents')]")).getText();
-//			assertEquals("Enter contact details of the bride’s parents",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Enter contact details of the groom’s parents')]")).getText();
-//			assertEquals("Enter contact details of the groom’s parents",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		//native
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Enter the native place of the bride')]")).getText();
-//			assertEquals("Enter the native place of the bride",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//		try {
-//			String casdiv=driver.findElement(By.xpath("//label[contains(text(),'Enter the native place of the groom')]")).getText();
-//			assertEquals("Enter the native place of the groom",casdiv, "Passed");
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//		
-//	
-//		
-//		Thread.sleep(4000);
-//		BaseTest.click(rp.getFatherstatus());
-//		
-//		
-//		Thread.sleep(4000);
-//		driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//		BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 45)+"')]")));
-//		
-//		Thread.sleep(4000);
-//		driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//		BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 46)+"')]")));
-//		
-//		Thread.sleep(4000);
-//		driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//		BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData1("Sheet3", 1, 47)+"')]")));
-//		
-//		Thread.sleep(4000);
-//		driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//		BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData1("Sheet3", 1, 48)+"')]")));
-//		
-//		
-//		Thread.sleep(4000);
-//		driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//		BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData1("Sheet3", 1, 49)+"')]")));
-//		
-//		Thread.sleep(4000);
-//		driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//		BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData1("Sheet3", 1, 50)+"')]")));
-//		
-//		
-//		Thread.sleep(4000);
-//		JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//	   	  WebElement edi25= driver.findElement(By.xpath("//*[@id='PARENTCONTACT']"));
-//	   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//		Thread.sleep(4000);
-//		WebElement parent=driver.findElement(By.xpath("//*[@id='PARENTCONTACT']"));
-//		parent.sendKeys("9176800869");
-//		
-//		
-//		Thread.sleep(4000);
-//		WebElement nativ=driver.findElement(By.xpath("//*[@id='FAMILYORIGIN']"));
-//		nativ.sendKeys("chennai");
-//		
-//		
-//		Thread.sleep(4000);
-//		BaseTest.click(rp.getContinuebutton3()); 
-//		
-//			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-
-//			Thread.sleep(4000);
-//			BaseTest.click(rp.getStar());
-//			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 19)+"')]")));
-//			
-//			try {
-//				Thread.sleep(4000);
-//				JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//			   	  WebElement edi25= driver.findElement(By.xpath("//*[@id='RAASI']"));
-//			   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//				Thread.sleep(4000);
-//				BaseTest.click(rp.getRaasi());
-//				driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//				BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 20)+"')]")));
-//				
-//			} catch (Exception e) {
-//				//System.out.println("no Rassi 1");
-//			}
-//			
-//			try {
-//				Thread.sleep(4000);
-//				JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//			   	  WebElement edi25= driver.findElement(By.xpath("//*[@id='CBSRegistration4']/fieldset[2]/div"));
-//			   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//				driver.findElement(By.xpath("//*[@id='CBSRegistration4']/fieldset[2]/div")).click();
-//				driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//				BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 20)+"')]")));
-//			} catch (Exception e) {
-//				//System.out.println("no raasi 2");
-//			}
-//			
-//			try {
-//				Thread.sleep(4000);
-//				JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//			   	  WebElement edi25= driver.findElement(By.xpath("//*[@id='CBSRegistration4']/fieldset[2]/div/div"));
-//			   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//				Thread.sleep(4000);
-//				driver.findElement(By.xpath("//*[@id='CBSRegistration4']/fieldset[2]/div/div")).click();
-//				driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//				BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 20)+"')]")));
-//				
-//			} catch (Exception e) {
-//				//System.out.println("no raasi3");
-//			}
-//			
-//			
-//			
-//			Thread.sleep(4000);
-//			WebElement gothra=driver.findElement(By.xpath("//*[@id='GOTHRA_TXT']"));
-//			gothra.sendKeys("siva");
-//			
-//			BaseTest.click(rp.getDhosam());
-//			
-//			BaseTest.click(rp.getTimeofbirth());
-//			driver.findElement(By.xpath("/html/body/div[4]/div[3]/span[1]")).click();
-//			
-//			BaseTest.click(rp.getCountryofbirth());
-//			driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//			BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 21)+"')]")));
-//			
-//			try {
-//				Thread.sleep(4000);
-//				JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//			   	  WebElement edi25= driver.findElement(By.xpath("//*[@id='BirthStateDisplay']/fieldset/div"));
-//			   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//				BaseTest.click(rp.getStateofbirth());
-//				driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//				BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 22)+"')]")));
-//			} catch (Exception e) {
-//				//System.out.println("no state1");
-//			}
-//			try {
-//				Thread.sleep(4000);
-//				JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//			   	  WebElement edi25= driver.findElement(By.xpath("//*[@id='BIRTHSTATE']"));
-//			   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//			   	driver.findElement(By.xpath("//*[@id='BIRTHSTATE']")).click();
-//				driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//				BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 22)+"')]")));
-//				
-//			} catch (Exception e) {
-//				//System.out.println("no state 2");
-//			}
-//			try {
-//				Thread.sleep(4000);
-//				JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//			   	  WebElement edi25= driver.findElement(By.xpath("//*[@id='BirthStateDisplay']/fieldset/div/div"));
-//			   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//				driver.findElement(By.xpath("//*[@id='BirthStateDisplay']/fieldset/div/div")).click();
-//				driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//				BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 22)+"')]")));
-//				
-//			} catch (Exception e) {
-//				//System.out.println("no state 3");
-//			}
-//			
-//			try {
-//				Thread.sleep(4000);
-//				JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//			   	  WebElement edi25= driver.findElement(By.xpath("(//*[@id='CitySelectBox']/fieldset/div)[1]"));
-//			   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//			   	BaseTest.click(rp.getCityofbirth());
-//				driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//				BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 23)+"')]")));
-//				
-//			} catch (Exception e) {
-//				//System.out.println("no city 1");
-//			}
-//			
-//			try {
-//				Thread.sleep(4000);
-//				JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//			   	  WebElement edi25= driver.findElement(By.xpath("(//*[@id='CitySelectBox']/fieldset/div)[1]"));
-//			   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//			   	driver.findElement(By.xpath("//*[@id='BIRTHCITY']")).click();
-//				driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//				BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 23)+"')]")));
-//				
-//			} catch (Exception e) {
-//				//System.out.println("no city 2");
-//			}
-//			
-//			try {
-//				Thread.sleep(4000);
-//				JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//			   	  WebElement edi25= driver.findElement(By.xpath("(//*[@id='CitySelectBox']/fieldset/div/div)[1]"));
-//			   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//			   	driver.findElement(By.xpath("(//*[@id='CitySelectBox']/fieldset/div/div)[1]")).click();
-//				driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//				BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 23)+"')]")));
-//				
-//			} catch (Exception e) {
-//				//System.out.println("no city 3");
-//			}
-//			
-//			try {
-//				Thread.sleep(4000);
-//				JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//			   	  WebElement edi25= driver.findElement(By.xpath("(//*[@id='CitySelectBox']/fieldset/div)[2]"));
-//			   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//				BaseTest.click(rp.getChartstyle());
-//				driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//				BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 24)+"')]")));
-//				
-//				
-//			} catch (Exception e) {
-//				//System.out.println("no chartstyle1");
-//			}
-//			
-//			try {
-//				Thread.sleep(4000);
-//				JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//			   	  WebElement edi25= driver.findElement(By.xpath("//*[@id='chartstyle']"));
-//			   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//				driver.findElement(By.xpath("//*[@id='chartstyle']")).click();
-//				driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//				BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 24)+"')]")));
-//				
-//				
-//			} catch (Exception e) {
-//				//System.out.println("no chartstyle2");
-//			}
-//			
-//			try {
-//				Thread.sleep(4000);
-//				JavascriptExecutor js25 = (JavascriptExecutor)driver;
-//			   	  WebElement edi25= driver.findElement(By.xpath("(//*[@id='CitySelectBox']/fieldset/div)[2]"));
-//			   	js25.executeScript("arguments[0].scrollIntoView(true);",edi25);
-//				driver.findElement(By.xpath("(//*[@id='CitySelectBox']/fieldset/div)[2]")).click();
-//				driver.findElement(By.xpath("//*[@id='RegPanelSearchvalue']")).click();
-//				BaseTest.click(driver.findElement(By.xpath("//li[contains(text(),'"+getExcelData("Sheet3", 1, 24)+"')]")));
-//				
-//				
-//			} catch (Exception e) {
-//				//System.out.println("no chartstyle3");
-//			}
-//			
-//			Thread.sleep(4000);
-//			BaseTest.click(rp.getContinuebutton());
-//			
-//			
-//			
-			
-			
-			
-			
-			
+          Thread.sleep(4000);
+          WebElement citizenship1=driver.findElement(By.xpath("(//div[contains(text(),'Citizenship')]//following::div[1])[2]"));
+          String citizenship1pp=citizenship1.getText();
+          System.out.println("citizenship in pi :"+citizenship1pp);
+  
+          
 			
 			
 			
