@@ -1227,121 +1227,78 @@ public class RegistrationPI extends BaseTest{
 		//pi informations
           
           Thread.sleep(4000);
-          WebElement marital2=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[3]/div[2]/ul/li[1]/div[2]"));
-          String partner=marital2.getText();
-          System.out.println("marital status :"+partner);
+  		WebElement ab12 = driver.findElement(By.xpath("//*[@id='linktobasic_details']/div[2]/ul/li[4]/div[2]"));
+  		String age123 = ab12.getText();
+  		System.out.println("Age:" + age123);
+  		
+  		WebElement hei12=driver.findElement(By.xpath("//*[@id='linktobasic_details']/div[2]/ul/li[5]/div[2]"));
+  		  String hei11=hei12.getText();
+  		  System.out.println("Height :"+hei11);
+  	  
+  			Thread.sleep(4000);
+  			WebElement bc1 = driver.findElement(By.xpath("//*[@id='linktobasic_details']/div[2]/ul/li[7]/div[2]"));
+  			String marital123 = bc1.getText();
+  			System.out.println("Marital Status:" + marital123);
+  			
+  			Thread.sleep(4000);
+  			WebElement de123 = driver.findElement(By.xpath("(//div[contains(text(),'Religion')]//following::div[1])[1]"));
+  			String religionpi1 = de123.getText();
+  			System.out.println("Religion :" + religionpi1);
 
-          try {
-                  Thread.sleep(4000);
-                  WebElement havechild=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[3]/div[2]/ul/li[2]/div[2]"));
-                  String child=havechild.getText();
-                  System.out.println("have children :"+child);
+  			Thread.sleep(4000);
+  			WebElement cd12 = driver.findElement(By.xpath("(//div[contains(text(),'Education')]//following::div[1])[1]"));
+  			String education12 = cd12.getText();
+  			System.out.println("Education :" + education12);
 
-        } catch (Exception e2) {
-                System.out.println("no child");
-        }
+  	  
+  			Thread.sleep(4000);
+  			WebElement cd111 = driver.findElement(By.xpath("(//div[contains(text(),'Income')]//following::div[1])[1]"));
+  			String income1234 = cd111.getText();
+  			System.out.println("Income :" + income1234);
+  			
+  			Thread.sleep(4000);
+  			WebElement bc11 = driver.findElement(By.xpath("(//div[contains(text(),'Mother Tongue')]//following::div[1])[1]"));
+  			String mother12 = bc11.getText();
+  			System.out.println("Mother Tongue:" + mother12);
 
-          Thread.sleep(4000);
-          WebElement age=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[3]/div[2]/ul/li[3]/div[2]"));
-          String ppa=age.getText();
-          System.out.println("Age in pi:"+ppa);
-          String[] split=ppa.split(" - 35 Yrs");
+  			Thread.sleep(4000);
+  			WebElement bc111 = driver.findElement(By.xpath("(//div[contains(text(),'Physical Status')]//following::div[1])[1]"));
+  			String physical12 = bc111.getText();
+  			System.out.println("Physcial Status:" + physical12);
 
-          String[] split1=ppa.split(" - ");
+  			Thread.sleep(4000);
+  			WebElement ac11 = driver.findElement(By.xpath("(//div[contains(text(),'Sub Caste')]//following::div[1])[1]"));
+  			String subcaste12 = ac11.getText();
+  			System.out.println("SubCaste:" + subcaste12);
 
-          String[] split2=split1[1].split(" Yrs");
+  			Thread.sleep(4000);
+  			WebElement ac111 = driver.findElement(By.xpath("(//div[contains(text(),'Dosham')]//following::div[1])[1]"));
+  			String dosham21 = ac111.getText();
+  			System.out.println("Dosham:" + dosham21);
+  	  
+  			Thread.sleep(4000);
+  			WebElement de121 = driver.findElement(By.xpath("(//div[contains(text(),'Eating Habits')]//following::div[1])[1]"));
+  			String eating12 = de121.getText();
+  			System.out.println("Eating Habits:" + eating12);
 
-          String ppage=(split[0]+"-"+split2[0]);
-          System.out.println("final pi age:"+ppage);
+  			Thread.sleep(4000);
+  			WebElement e121 = driver.findElement(By.xpath("(//div[contains(text(),'Drinking Habits')]//following::div[1])[1]"));
+  			String drinking12 = e121.getText();
+  			System.out.println("Drinking Habits:" + drinking12);
 
-          Thread.sleep(4000);
-          WebElement height1=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[3]/div[2]/ul/li[4]/div[2]"));
-          String ppheight=height1.getText();
-          System.out.println("Height in pi :"+ppheight);
+  			Thread.sleep(4000);
+  			WebElement de2121 = driver.findElement(By.xpath("(//div[contains(text(),'Smoking Habits')]//following::div[1])[1]"));
+  			String smoking12 = de2121.getText();
+  			System.out.println("Smoking Habits:" + smoking12);
 
-          Thread.sleep(4000);
-          WebElement mother=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[3]/div[2]/ul/li[5]/div[2]/span"));
-          String tongue=mother.getText();
-          System.out.println("mother tongue in pi :"+tongue);
-
-
-
-                  Thread.sleep(4000);
-                  WebElement caste5=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[4]/div[2]/ul/li[1]/div[2]"));
-                  String subcaste1=caste5.getText();
-                  System.out.println("subcaste in pi :"+subcaste1);
-
-
-
-
-
-          Thread.sleep(4000);
-          WebElement dosham=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[4]/div[2]/ul/li[2]/div[2]"));
-          String doshampp=dosham.getText();
-          System.out.println("Gotharam in pi :"+doshampp);
-
-          Thread.sleep(4000);
-          WebElement star5=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[4]/div[2]/ul/li[3]/div[2]"));
-          String starpp=star5.getText();
-          System.out.println("Dosham in pi :"+starpp);
-
-
-          Thread.sleep(4000);
-          WebElement edu=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[5]/div[2]/ul/li[1]/div[2]"));
-          String edupp=edu.getText();
-          System.out.println("education in pi :"+edupp);
-
-
-          Thread.sleep(4000);
-          WebElement occ=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[5]/div[2]/ul/li[2]/div[2]"));
-          String occpp=occ.getText();
-          System.out.println("occupation in pi :"+occpp);
-
-
-          Thread.sleep(4000);
-          WebElement income=driver.findElement(By.xpath("//*[@id='editpi-pwa']/div[5]/div[2]/ul/li[3]/div[2]"));
-          String incomepp=income.getText();
-          System.out.println("income in pi :"+incomepp);
-
-
-          Thread.sleep(4000);
-          WebElement country=driver.findElement(By.xpath("(//div[contains(text(),'Country')]//following::div[1])[2]"));
-          String countryp=country.getText();
-//          System.out.println("country in pp :"+countryp);
-//          String[] coun1=countryp.split(",");
-  //
-//          String countrypp=(coun1[0]+coun1[1]+coun1[2]+coun1[3]);
-          System.out.println("finalcountry in pi:"+countryp);
-
-
-
-//          Thread.sleep(4000);
-//          WebElement state1=driver.findElement(By.xpath("(//div[contains(text(),'State')]//following::div[1])[3]"));
-//          String statepp=state1.getText();
-//          System.out.println("state in pp :"+statepp);
-  //
-  //
-  //
-//          Thread.sleep(4000);
-//          WebElement city1=driver.findElement(By.xpath("(//div[contains(text(),'City')]//following::div[1])"));
-//          String cityp=city1.getText();
-//          System.out.println("city in pp :"+cityp);
-//          String[] coun2=cityp.split(",");
-  //
-//          String citypp=(coun2[0]+coun2[1]);
-//          System.out.println("final city in pp:"+citypp);
-
-
-
-          Thread.sleep(4000);
-          WebElement citizenship1=driver.findElement(By.xpath("(//div[contains(text(),'Citizenship')]//following::div[1])[2]"));
-          String citizenship1pp=citizenship1.getText();
-          System.out.println("citizenship in pi :"+citizenship1pp);
-  
-          
-			
-			
-			
+  			 WebElement country=driver.findElement(By.xpath("(//div[contains(text(),'Country')]//following::div[1])[1]"));
+  			  String country12121212=country.getText();
+  			  System.out.println("Country  :"+country12121212);
+  			  
+  			  WebElement citizen1=driver.findElement(By.xpath("(//div[contains(text(),'Citizenship')]//following::div[1])[1]"));
+  			  String citizenshi1=citizen1.getText();
+  			  System.out.println("Citizenship  :"+citizenshi1);  
+  			  
 			
 			
 			
